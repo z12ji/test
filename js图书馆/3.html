@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+
+</head>
+
+<style>
+    
+    .div1{
+            width:400px;
+            height:420px;
+            margin:0 auto;
+            position:absolute;
+            left:40%;
+            top:25%;
+            background: none repeat scroll 0 0 skyblue;
+            border: 1px solid brown;
+            padding-top: 30px;
+            text-align: left;
+        }
+    
+</style>
+<body>
+<!-- ＝＝＝＝登录的内容＝＝＝＝＝＝＝ -->
+<div class="bg"></div>
+<div class="loginBox  div1" id="loginBox">
+    <form action="LoginServlet" method="post">
+        <h3 align="center">注册</h3><br>
+        <p>
+            &nbsp;账号&nbsp;&nbsp;&nbsp;<input type="text" name="username"  id="username"  placeholder="请输入您的账号">
+        </p>
+        <p>
+            &nbsp;密码&nbsp;&nbsp;&nbsp;<input type="password" name="password" id="password" placeholder="请输入您的密码">
+        </p>
+        <p>
+            &nbsp;用户&nbsp;&nbsp;&nbsp;<input type="email" name="password" id="email" placeholder="请输入您的用户名">
+        </p>
+         <p>
+            &nbsp;邮箱&nbsp;&nbsp;&nbsp;<input type="email" name="password" id="email" placeholder="请输入您的邮箱">
+        </p>
+         <p>
+            &nbsp;手机&nbsp;&nbsp;&nbsp;<input type="email" name="password" id="email" placeholder="请输入您的手机号">
+        </p>
+          <p style="color: red" class="tip"></p><br>
+        <p  align="center"><button type="button" id="login">注册</button></p>
+
+    </form>
+</div>
+<!-- ＝＝＝＝登录的内容end＝＝＝＝＝＝＝ -->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        
+        
+        $('#login').click(function(){
+            username = $('.div1 #username').val();
+            password = $('.div1 #password').val();
+            email =$('.div1 #email').val();
+
+            if(username==''||password==''||email==''){
+                    $('.div1 .tip').text('用户名或密码或邮箱不能为空');
+            }else{
+                $('.div1 .tip').text(' ');
+                window.location.href="./1.html"
+                console.log('下一步');
+            }
+
+           if(email=''){
+           		 $('.div1 .tip').text('邮箱不能为空');
+           }
+        });
+    });
+
+</script>
+</body>
+</html>
